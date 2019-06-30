@@ -119,6 +119,9 @@ def start_game():
         # check for winning scenario
         has_won = win_check(current_board, player_mark)
         if has_won:
+            # pretty print final outputs
+            clear_output()
+            display_board(current_board)
             print(f'Player {player_turn} is the winner!')
             restart = input(f'Would you like to play again? (Y/N)')
             if restart.upper() == 'Y':
