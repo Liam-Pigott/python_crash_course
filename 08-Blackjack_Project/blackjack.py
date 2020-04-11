@@ -8,7 +8,7 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 playing = True
 
 class Card:
-    def __init__(self, suit, rank):
+    def __init__(self, rank, suit):
         self.suit = suit
         self.rank = rank
 
@@ -20,7 +20,7 @@ class Deck:
         self.deck = []
         for suit in suits:
             for rank in ranks:
-                self.deck.append(Card(suit, rank))
+                self.deck.append(Card(rank, suit))
 
     def __str__(self):
         deck_state = ''
@@ -69,6 +69,7 @@ class Chip:
     def lose_bet(self):
         self.total -= bet
 
+"""
 deck = Deck()
 deck.shuffle()
 
@@ -78,3 +79,5 @@ player.add_card(deck.deal())
 
 print(player)
 print(player.value)
+"""
+
