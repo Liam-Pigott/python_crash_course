@@ -21,5 +21,30 @@ class TestBlackjack(unittest.TestCase):
         hand.adjust_for_aces()
         self.assertEqual(hand.value, 16)
 
+    def test_win_bet(self):
+        chip = blackjack.Chips()
+        chip.bet = 42
+        chip.win_bet()
+        self.assertEqual(chip.total, 142)
+    
+    def test_win_bet_blackjack(self):
+        chip = blackjack.Chips()
+        chip.bet = 42
+        chip.win_bet_blackjack()
+        self.assertEqual(chip.total, 163)
+
+    def test_win_bet_with_total(self):
+        chip = blackjack.Chips(145)
+        chip.bet = 42
+        chip.win_bet()
+        self.assertEqual(chip.total, 187)
+
+    def test_lose_bet(self):
+        chip = blackjack.Chips()
+        chip.bet = 42
+        chip.lose_bet()
+        self.assertEqual(chip.total, 58)
+
+
 if __name__ == '__main__':
     unittest.main()
