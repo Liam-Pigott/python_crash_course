@@ -24,8 +24,8 @@ string_iter = iter(s)
 
 # Problem 4 - Explain a use case for a generator using a yield statement where you would not want to use a normal function with a return statement.
 #
-# Given that yield negates the need for maintaining a list of return values, it's ideal for returning values without needing to allocate memory.
-#
+# Given that yield negates the need for maintaining a list of return values, it's ideal for when the method is used purely for iteration.
+# Especially useful when dealing with large amounts of data as this requires much less memory allocation.
 
 #Extra Credit! - Can you explain what gencomp is in the code below? (Note: We never covered this in lecture! You will have to do some Googling/Stack Overflowing!)
 my_list = [1,2,3,4,5]
@@ -35,4 +35,4 @@ gencomp = (item for item in my_list if item > 3)
 for item in gencomp:
     print(item)
 
-# Looks like basic filtering by looping through 'my_list' and storing 'item' in the gencomp variable if the value is > 3.
+# Looks like list comprehension except here we're assigning a generator to gencomp, taking up less memory. 
